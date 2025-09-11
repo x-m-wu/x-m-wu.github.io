@@ -16,5 +16,3 @@ I'm an Associate Professor in [School of Mathematical Sciences](https://math.fud
 My research focuses on Numerical Analysis of Partial Differential Equations.
 
 ---
-
-[Email](mailto:wuxinming@fudan.edu.cn) / [GitHub](https://x-m-wu.github.io)
