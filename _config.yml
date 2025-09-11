@@ -26,10 +26,10 @@ author:
   avatar           : "profile.png"
   name             : "Xinming Wu"
   pronouns         : # example: "she/her"  
-  bio              : "Fudan University"
-  location         : "Location"
+  bio              : # "Short biography for the left-hand sidebar"
+  location         : "Earth"
   employer         : "Fudan University"
-  uri              : "https://www.fudan.edu.cn"
+  uri              : # URL
   email            : "wuxinming@fudan.edu.cn" 
 
   # Academic websites
