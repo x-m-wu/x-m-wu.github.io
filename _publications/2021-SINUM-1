@@ -1,0 +1,14 @@
+---
+title: "Finite element approximation of the modified Maxwell's Stekloff eigenvalues"
+collection: publications
+category: manuscripts
+permalink: /publication/2021-SINUM-1
+excerpt: ''
+date: 2021-01-01
+venue: 'SIAM Journal on Numerical Analysis'
+#slidesurl: 'http://academicpages.github.io/files/slides3.pdf'
+paperurl: 'http://academicpages.github.io/files/paper3.pdf'
+citation: 'B. Gong, J. Sun, X. Wu. &quot;Finite element approximation of the modified Maxwell's Stekloff eigenvalues.&quot; <i>SIAM Journal on Numerical Analysis.</i>. 50(5), 2430-2448, 2021.'
+---
+
+The modified Maxwell's Stekloff eigenvalue problem arises recently from the inverse electromagnetic scattering theory for inhomogeneous media. This paper contains a rigorous analysis of both the eigenvalue problem and the associated source problem on Lipschitz polyhedra. A new finite element method is proposed to compute Stekloff eigenvalues. By applying the Babu\v ska--Osborn theory, we prove an error estimate without additional regularity assumptions. Numerical results are presented for validation.
