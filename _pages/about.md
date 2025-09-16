@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 <div class="text-justify">
-<p></p>Hello! I'm an Associate Professor in [School of Mathematical Sciences](https://math.fudan.edu.cn) at [Fudan University](https://www.fudan.edu.cn), Shanghai, China.</p>
+<p>Hello! I'm an Associate Professor in [School of Mathematical Sciences](https://math.fudan.edu.cn) at [Fudan University](https://www.fudan.edu.cn), Shanghai, China.</p>
 <p>My research focuses on Numerical Analysis for Partial Differential Equations, Finite Element Method and related topics.</p>
 </div>
 
