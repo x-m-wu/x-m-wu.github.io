@@ -52,7 +52,7 @@ layout: default
         <div class="text-justify">
         {{ content }}
         </div>
-
+{% comments %}
         {% if page.authors and page.venue %}<p style="font-size: smaller">Recommended citation:
           {{ page.authors }}. "{{ page.title }}". <i>{{ page.venue }}</i>,
           {% if page.volume %}{{ page.volume }}{% endif %}{% if page.issue %}({{ page.issue }}),{% else %},{% endif %}
@@ -60,7 +60,7 @@ layout: default
           {% if page.year %}{{ page.year }}.{% endif %}
           {% if page.doi %}https://doi.org/{{ page.doi }}{% endif %}</p>
         {% endif %}
-{% comments %}
+
         {% if page.doi %}
           {% if page.slidesurl %}
             {% if page.bibtexurl %}
