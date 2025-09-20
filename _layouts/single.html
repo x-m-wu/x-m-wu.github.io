@@ -60,7 +60,7 @@ layout: default
           {% if page.year %}{{ page.year }}.{% endif %}
           {% if page.doi %}https://doi.org/{{ page.doi }}{% endif %}</p>
         {% endif %}
-
+{% comments %}
         {% if page.doi %}
           {% if page.slidesurl %}
             {% if page.bibtexurl %}
@@ -102,7 +102,7 @@ layout: default
             {% endif %}
           {% endif %}
         {% endif %}
-
+{% comments %}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
