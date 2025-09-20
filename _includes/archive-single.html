@@ -59,9 +59,9 @@
     {% if post.year and post.doi %}
       {% if post.volume and post.issue and post.pages %}
         <p class="archive__item-excerpt" itemprop="description">{{ post.authors }}. "{{ post.title }}". <i>{{ post.venue }}</i>. {{ post.volume }}({{ post.issue }}):{{ post.pages }}, {{ post.year }}. https://doi.org/{{ post.doi }}</p>
-      {% elsif post.volume and !post.issue and post.pages %}
+      {% elsif post.volume and post.pages %}
         <p class="archive__item-excerpt" itemprop="description">{{ post.authors }}. "{{ post.title }}". <i>{{ post.venue }}</i>. {{ post.volume }}:{{ post.pages }}, {{ post.year }}. https://doi.org/{{ post.doi }}</p>
-      {% elsif post.volume and !post.issue and !post.pages %}
+      {% elsif post.volume %}
         <p class="archive__item-excerpt" itemprop="description">{{ post.authors }}. "{{ post.title }}". <i>{{ post.venue }}</i>. {{ post.volume }}, {{ post.year }}. https://doi.org/{{ post.doi }}</p>
       {% else %}
         <p class="archive__item-excerpt" itemprop="description">{{ post.authors }}. "{{ post.title }}". <i>{{ post.venue }}</i>. {{ post.year }}. https://doi.org/{{ post.doi }}</p>
@@ -69,9 +69,9 @@
     {% elsif post.year %}
       {% if post.volume and post.issue and post.pages %}
         <p class="archive__item-excerpt" itemprop="description">{{ post.authors }}. "{{ post.title }}". <i>{{ post.venue }}</i>. {{ post.volume }}({{ post.issue }}):{{ post.pages }}, {{ post.year }}.</p>
-      {% elsif post.volume and !post.issue and post.pages %}
+      {% elsif post.volume and post.pages %}
         <p class="archive__item-excerpt" itemprop="description">{{ post.authors }}. "{{ post.title }}". <i>{{ post.venue }}</i>. {{ post.volume }}:{{ post.pages }}, {{ post.year }}.</p>
-      {% elsif post.volume and !post.issue and !post.pages %}
+      {% elsif post.volume %}
         <p class="archive__item-excerpt" itemprop="description">{{ post.authors }}. "{{ post.title }}". <i>{{ post.venue }}</i>. {{ post.volume }}, {{ post.year }}.</p>
       {% else %}
         <p class="archive__item-excerpt" itemprop="description">{{ post.authors }}. "{{ post.title }}". <i>{{ post.venue }}</i>. {{ post.year }}.</p>
