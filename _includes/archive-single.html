@@ -71,7 +71,7 @@
     {% elsif post.citation and post.bibtexurl %}
       <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
     {% elsif post.citation %}
-      <p>Recommended citation: {{ page.authors }}. "{{ page.title }}". <i>{{ page.venue }}</i>. {{ page.volume }}({{ page.issue }}):{{ page.pages }}, {{ page.year }}.</p>
+      <p>Recommended citation: {{ post.authors }}. "{{ post.title }}". <i>{{ post.venue }}</i>. {{ post.volume }}({{ post.issue }}):{{ post.pages }}, {{ post.year }}.</p>
     {% elsif post.paperurl and post.bibtexurl %}
       <p><a href=" {{ post.paperurl }} ">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
     {% elsif post.paperurl %}
