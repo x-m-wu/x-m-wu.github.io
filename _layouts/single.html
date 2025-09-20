@@ -52,7 +52,7 @@ layout: default
         <div class="text-justify">
         {{ content }}
         </div>
-{% comments %}
+{% comment %}
         {% if page.authors and page.venue %}<p style="font-size: smaller">Recommended citation:
           {{ page.authors }}. "{{ page.title }}". <i>{{ page.venue }}</i>,
           {% if page.volume %}{{ page.volume }}{% endif %}{% if page.issue %}({{ page.issue }}),{% else %},{% endif %}
@@ -102,7 +102,7 @@ layout: default
             {% endif %}
           {% endif %}
         {% endif %}
-{% endcomments %}
+{% endcomment %}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
