@@ -45,7 +45,7 @@
     {% endif %}
 
     <p class="archive__item-excerpt" itemprop="description">{{ post.authors }}. "{{ post.title }}". <i>{{ post.venue }}</i>,</p>
-    {% comments %}
+    {% comment %}
     {% if post.authors and post.venue %}
       <p class="archive__item-excerpt" itemprop="description">
       {{ post.authors }}. "{{ post.title }}". <i>{{ post.venue }}</i>,
@@ -54,7 +54,7 @@
       {% if post.year %}{{ post.year }}.{% endif %}
       {% if post.doi %}https://doi.org/{{ post.doi }}{% endif %}</p>
     {% endif %}
-    {% endcomments %}
+    {% endcomment %}
 
   </article>
 </div>
