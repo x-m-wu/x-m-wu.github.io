@@ -46,7 +46,7 @@
   
     <p class="archive__item-excerpt" itemprop="description">
       {% if post.authors %}{{ post.authors }}.{% endif %}
-      "{{ post.title }}". 
+      "{{ post.title }}".
       {% if post.venue %}<i>{{ post.venue }}</i>,{% endif %}
       {% if post.volume %}{{ post.volume }}{% endif %}{% if post.issue %}({{ post.issue }}),{% else %},{% endif %}
       {% if post.pages %}{{ post.pages }},{% endif %}
