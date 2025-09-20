@@ -60,6 +60,38 @@ layout: default
           {% if page.year %}{{ page.year }}.{% endif %}
           {% if page.doi %}https://doi.org/{{ page.doi }}{% endif %}</p>
         {% endif %}
+
+        {% if page.doi %}
+          {% assign paper_url = "https://doi.org/" | append: page.doi %}
+          {% assign paper_text = "Download Paper" %}
+        {% elsif page.paperurl %}
+          {% assign paper_url = page.paperurl %}
+          {% assign paper_text = "Download Paper" %}
+        {% else %}
+          {% assign paper_url = nil %}
+          {% assign paper_text = nil %}
+        {% endif %}
+
+        {% assign slides_url = page.slidesurl %}
+        {% assign bibtex_url = page.bibtexurl %}
+
+        {% if paper_url or slides_url or bibtex_url %}
+          <p style="font-size: smaller">
+          {% if paper_url %}
+            <a href="{{ paper_url }}">{{ paper_text }}</a>
+            {% if slides_url or bibtex_url %} | {% endif %}
+          {% endif %}
+    
+          {% if slides_url %}
+            <a href="{{ slides_url }}">Download Slides</a>
+            {% if bibtex_url %} | {% endif %}
+          {% endif %}
+    
+          {% if bibtex_url %}
+            <a href="{{ bibtex_url }}">Download Bibtex</a>
+          {% endif %}
+          </p>
+        {% endif %}
         
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
