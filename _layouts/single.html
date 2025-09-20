@@ -53,7 +53,7 @@ layout: default
         {{ content }}
         </div>
 
-        {% if post.authors and post.venues %}<p style="font-size: smaller">Recommended citation:
+        {% if post.authors and post.venue %}<p style="font-size: smaller">Recommended citation:
           {{ post.authors }}. "{{ post.title }}". <i>{{ post.venue }}</i>,
           {% if post.volume %}{{ post.volume }}{% endif %}{% if post.issue %}({{ post.issue }}),{% else %},{% endif %}
           {% if post.pages %}{{ post.pages }},{% endif %}
