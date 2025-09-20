@@ -53,30 +53,54 @@ layout: default
         {{ content }}
         </div>
 
-        {% if page.citation and page.paperurl and page.slidesurl and page.bibtexurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation and page.paperurl and page.slidesurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.citation and page.paperurl and page.bibtexurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation and page.paperurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a></p>
-        {% elsif page.citation and page.slidesurl and page.bibtexurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation and page.slidesurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.slidesurl and page.bibtexurl %}
-          <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.paperurl and page.bibtexurl %}
-          <p style="font-size: smaller"><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation and page.bibtexurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
-        {% elsif page.citation %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}</p>
-        {% elsif page.slidesurl %}
-          <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.bibtexurl %}
-          <p style="font-size: smaller"><a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
+        {% if post.authors and post.venues %}<p style="font-size: smaller">Recommended citation:
+          {{ post.authors }}. "{{ post.title }}". <i>{{ post.venue }}</i>,
+          {% if post.volume %}{{ post.volume }}{% endif %}{% if post.issue %}({{ post.issue }}),{% else %},{% endif %}
+          {% if post.pages %}{{ post.pages }},{% endif %}
+          {% if post.year %}{{ post.year }}.{% endif %}
+          {% if post.doi %}https://doi.org/{{ post.doi }}{% endif %}</p>
+        {% endif %}
+
+        {% if page.doi %}
+          {% if page.slidesurl %}
+            {% if page.bibtexurl %}
+              <p style="font-size: smaller"><a href="https://doi.org/{{ page.doi }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
+            {% else %}
+              <p style="font-size: smaller"><a href="https://doi.org/{{ page.doi }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a></p>
+            {% endif %}
+          {% else %}
+            {% if page.bibtexurl %}
+              <p style="font-size: smaller"><a href="https://doi.org/{{ page.doi }}">Download Paper</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
+            {% else %}
+              <p style="font-size: smaller"><a href="https://doi.org/{{ page.doi }}">Download Paper</a></p>
+            {% endif %}
+          {% endif %}
+        {% elseif page.paperurl %}
+          {% if page.slidesurl %}
+            {% if page.bibtexurl %}
+              <p style="font-size: smaller"><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
+            {% else %}
+              <p style="font-size: smaller"><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a></p>
+            {% endif %}
+          {% else %}
+            {% if page.bibtexurl %}
+              <p style="font-size: smaller"><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
+            {% else %}
+              <p style="font-size: smaller"><a href="{{ page.paperurl }}">Download Paper</a></p>
+            {% endif %}
+          {% endif %}
+        {% else %}
+          {% if page.slidesurl %}
+            {% if page.bibtexurl %}
+              <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Download Slides</a> | <a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
+            {% else %}
+              <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Download Slides</a></p>
+            {% endif %}
+          {% else %}
+            {% if page.bibtexurl %}
+              <p style="font-size: smaller"><a href="{{ page.bibtexurl }}">Download Bibtex</a></p>
+            {% endif %}
+          {% endif %}
         {% endif %}
 
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
