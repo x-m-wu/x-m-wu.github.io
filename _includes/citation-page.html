@@ -1,0 +1,13 @@
+{% if page.authors and page.venue %}
+  {% capture citation %}
+    {{ page.authors }}. "{{ page.title }}". <i>{{ page.venue }}</i>
+    {% if page.volume or page.issue or page.pages or page.year or page.doi %},{% endif %}
+    {% if page.volume %}{{ page.volume }}{% endif %}
+    {% if page.issue %}({{ page.issue }}){% endif %}
+    {% if page.volume or page.issue %}{% if page.pages or page.year or page.doi %}, {% endif %}{% endif %}
+    {% if page.pages %}{{ page.pages }}{% if page.year or page.doi %}, {% endif %}{% endif %}
+    {% if page.year %}{{ page.year }}{% if page.doi %}. {% else %}.{% endif %}{% endif %}
+    {% if page.doi %}https://doi.org/{{ page.doi }}{% endif %}
+  {% endcapture %}
+  <p style="font-size: smaller">Recommended citation: {{ citation | strip }}</p>
+{% endif %}
