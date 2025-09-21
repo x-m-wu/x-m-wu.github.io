@@ -7,7 +7,7 @@
     {% if include.item.volume or include.item.issue -%}{%- if include.item.pages or include.item.year or include.item.doi %}, {% else %}.{% endif %}{% endif %}
     {% if include.item.pages %}{{ include.item.pages }}{% if include.item.year or include.item.doi %}, {% endif %}{% else %}.{% endif %}
     {% if include.item.year %}{{ include.item.year }}{% if include.item.doi %}. {% else %}.{% endif %}{% endif %}
-    {%- if include.item.doi -%}https://doi.org/{{ include.item.doi }}{%- endif -%}
+    {% if include.item.doi %}https://doi.org/{{ include.item.doi }}{% endif %}
   {% endcapture %}
   {% if include.context == "page" %}
     <p style="font-size: smaller">Recommended citation: {{ citation | strip }}</p>
