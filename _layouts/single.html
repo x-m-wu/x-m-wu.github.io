@@ -53,8 +53,8 @@ layout: default
         {{ content }}
         </div>
 
-        {% include citation.html item=page  context="page" %}
-        {% include citation-download.html item=page  context="page" %}
+        {% include citation.html item=page context="page" %}
+        {% include citation-download.html item=page context="page" %}
 
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
