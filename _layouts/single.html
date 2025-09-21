@@ -53,13 +53,7 @@ layout: default
         {{ content }}
         </div>
 
-        {% if page.authors and page.venue %}<p style="font-size: smaller">Recommended citation:
-          {{ page.authors }}. "{{ page.title }}". <i>{{ page.venue }}</i>,
-          {% if page.volume %}{{ page.volume }}{% endif %}{% if page.issue %}({{ page.issue }}),{% else %},{% endif %}
-          {% if page.pages %}{{ page.pages }},{% endif %}
-          {% if page.year %}{{ page.year }}.{% endif %}
-          {% if page.doi %}https://doi.org/{{ page.doi }}{% endif %}</p>
-        {% endif %}
+        {% include citation.html item=page %}
 
         {% if page.doi %}
           {% assign paper_url = "https://doi.org/" | append: page.doi %}
