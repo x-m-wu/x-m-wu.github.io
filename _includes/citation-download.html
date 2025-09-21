@@ -10,23 +10,25 @@
 {% assign bibtex_url = include.item.bibtexurl %}
 
 {% if paper_url or slides_url or bibtex_url %}
+  {% capture citation %}
+    {% if paper_url %}
+      <a href="{{ paper_url }}">Download Paper</a>
+      {% if slides_url or bibtex_url %} | {% endif %}
+    {% endif %}
+
+    {% if slides_url %}
+      <a href="{{ slides_url }}">Download Slides</a>
+      {% if bibtex_url %} | {% endif %}
+    {% endif %}
+
+    {% if bibtex_url %}
+      <a href="{{ bibtex_url }}">Download Bibtex</a>
+    {% endif %}
+  {% endcapture %}
+  
   {% if include.context == "page" %}
-    <p style="font-size: smaller">
+    <p style="font-size: smaller">{{ citation | strip }}</p>
   {% elsif include.context == "post" %}
-    <p class="archive__item-excerpt" itemprop="description">
+    <p class="archive__item-excerpt" itemprop="description">{{ citation | strip }}</p>
   {% endif %}
-  {% if paper_url %}
-    <a href="{{ paper_url }}">Download Paper</a>
-    {% if slides_url or bibtex_url %} | {% endif %}
-  {% endif %}
-    
-  {% if slides_url %}
-    <a href="{{ slides_url }}">Download Slides</a>
-    {% if bibtex_url %} | {% endif %}
-  {% endif %}
-    
-  {% if bibtex_url %}
-    <a href="{{ bibtex_url }}">Download Bibtex</a>
-  {% endif %}
-  </p>
 {% endif %}
