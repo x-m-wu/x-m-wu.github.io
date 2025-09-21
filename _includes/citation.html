@@ -1,6 +1,6 @@
 {% if include.item.authors and include.item.venue %}
   {% capture citation %}
-    {{ include.item.authors }}. "{{ include.item.title }}". <i>{{ include.item.venue }}</i>
+    {{- include.item.authors -}}. "{{- include.item.title -}}". <i>{{- include.item.venue -}}</i>
     {% if include.item.volume or include.item.issue or include.item.pages or include.item.year or include.item.doi %}, {% else %}.{% endif %}
     {%- if include.item.volume -%}{{ include.item.volume }}{%- endif -%}
     {%- if include.item.issue -%}({{ include.item.issue }}){%- endif -%}
