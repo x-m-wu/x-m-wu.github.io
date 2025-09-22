@@ -1,7 +1,7 @@
 {% if include.context == "post" %}
   {% if include.item.date %}<p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {{ include.item.date | date: '%B %d, %Y' }}</p>{% endif %}
 {% elsif include.context == "page" %}
-  {% if include.item.date %}<p class="page__meta"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>Date:</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></p>{% endif %}
+  {% if include.item.date %}<p style="font-size: smaller"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i>Date:</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time></p>{% endif %}
 {% endif %}
 
 {% if include.item.venue %}
