@@ -16,6 +16,6 @@
   {% if include.context == "post" %}
     <p class="archive__item-excerpt" itemprop="description">{{ citation | strip }}</p>
   {% elsif include.context == "page" %}
-    <p class="page__content" itemprop="text"><strong><i class="fas fa-map" aria-hidden="true"></i>Address:</strong> {{ citation | strip }}</p>
+    <p style="font-size: smaller"><strong><i class="fas fa-map" aria-hidden="true"></i>Address:</strong> {{ citation | strip }}</p>
   {% endif %}
 {% endif %}
