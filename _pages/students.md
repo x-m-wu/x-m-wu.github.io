@@ -8,3 +8,4 @@ author_profile: true
 ## M.S. Students
 * Xingyu Zheng
 * Xiaoyi Jiang
+* Takumi Sato
