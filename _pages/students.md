@@ -5,4 +5,6 @@ permalink: /students/
 author_profile: true
 ---
 
-Under construction
+## M.S. Students
+* Xingyu Zheng
+* Xiaoyi Jiang
