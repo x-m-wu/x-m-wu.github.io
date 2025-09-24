@@ -5,4 +5,4 @@ permalink: /activities/
 author_profile: true
 ---
 
-Under construction
+{% include activities-contents.md %}
