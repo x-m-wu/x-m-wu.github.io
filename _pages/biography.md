@@ -5,4 +5,4 @@ permalink: /biography/
 author_profile: true
 ---
 
-Under construction
+{% include biography-contents.md %}
